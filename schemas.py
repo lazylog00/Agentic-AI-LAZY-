@@ -1,20 +1,12 @@
-'''
-A schema in programming is a formal blueprint or structural definition that 
-dictates how data is organized, stored, and related
-
-It acts as a "contract" for data integrity, defining data types, table structures (in databases), 
-or markup rules (in XML/JSON) to ensure applications can reliably create, read, and manipulate information.
-
-'''
-
-
-
-
-
-
 from pydantic import BaseModel
-from typing import List 
+from typing import List, Any
 
-class Response(BaseModel): 
-  ans: str 
-  steps: List[str]
+class Action(BaseModel):
+    action: str
+    a: float
+    b: float
+
+class Response(BaseModel):
+    ans: str
+    steps: List[str]
+    intermediate_results: List[Any] = []
