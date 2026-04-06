@@ -1,0 +1,4 @@
+ven/
+__pyache__/
+*.pyc
+.env
